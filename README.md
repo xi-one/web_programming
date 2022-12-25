@@ -1,7 +1,7 @@
 # web_programming
 
 웹프로그래밍 실습 개인 프로젝트입니다. <br>
-백엔드는 python flask와 를 사용했습니다. 
+백엔드는 python flask와 mysql db를 사용했습니다. 
 
 본 웹사이트는 학교에서 동아리 등록이나 청원서에 필요한 학생들의 서명을 받을 수 있는 플랫폼입니다.  <br>
 
