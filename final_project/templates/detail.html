@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% with message = get_flashed_messages() %}
+      {% if message %}
+        <script>
+          alert("{{message[-1]}}")
+        </script>
+      {% endif %}
+    {% endwith %}
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../static/css/detail_style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="Login-bar">
+        <div class="login">
+          {% if session.loginUser %}
+          <p> <a href="/logout">Log out</a> </p>
+          <p> <a href="/mypost">My Page</a> </p>
+          <p> Hi, {{session.loginUser.name}} </p>
+          {% else %}
+          <p><a href="/signup">Register</a></p>
+          <p><a href="/login">Login</a></p>
+
+
+          {% endif %}
+        </div>
+
+      </div>
+
+      <div class="logo">
+        <img src="../static/assets/logo.png" alt="">
+      </div>
+      <nav class="nav">
+          <p><a href="/">Home</a></p>
+          <p><a href="/notice">Notice</a></p>
+          <p><a href="/club">Club</a></p>
+          <p><a href="/suggestion">Suggestion</a></p>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="board-name">
+        <p>Signature For {{request.args.get('board')}}</p>
+      </div>
+
+      <table class="table">
+        {% if post %}
+        <colgroup>
+          <col style="width:33%">
+          <col style="width:33%">
+          <col style="width:33%"
+        </colgroup>
+        <tr>
+          <td colspan="3" id="title">{{post.title}}</td>
+        </tr>
+        <tr id="info" >
+          <td>{{post.username}}</td>
+          <td id="signature_num">{{post.signature_num}} / {{post.required_signature_num}}</td>
+          <td>{{post.created_at}}</td>
+        </tr>
+        <tr>
+          <td colspan="3" id="content">{{post.content}}</td>
+        </tr>
+        {% endif %}
+      </table>
+
+      <form class="form" action="/upload" method="post" enctype="multipart/form-data">
+        <p>Upload your signature here</p>
+        <input type="file" name="file" id="file" value="" accept=".pdf, .jpg, .png">
+        <button type="submit" name="button">Submit</button>
+      </form>
+
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer-center">
+        <div class="developer">
+          <p>DEVELOPER</p>
+        </div>
+        <div class="info">
+          <p>YooJaewon</p>
+          <p>SW 18</p>
+          <p>TEL: 010-9759-0028</p>
+          <p>Email: sssly1133@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

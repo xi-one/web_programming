@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../static/css/club_style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="Login-bar">
+        <div class="login">
+          {% if session.loginUser %}
+          <p> <a href="/logout">Log out</a> </p>
+          <p> <a href="/mypost">My Page</a> </p>
+          <p> Hi, {{session.loginUser.name}} </p>
+          {% else %}
+          <p><a href="/signup">Register</a></p>
+          <p><a href="/login">Login</a></p>
+
+
+          {% endif %}
+        </div>
+
+      </div>
+
+      <div class="logo">
+        <img src="../static/assets/logo.png" alt="">
+      </div>
+      <nav class="nav">
+          <p><a href="/">Home</a></p>
+          <p><a href="/notice">Notice</a></p>
+          <p><a href="/club">Club</a></p>
+          <p><a href="/suggestion">Suggestion</a></p>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="board-name">
+        <p style="border-bottom:5px solid rgb(141, 198, 63)">Signature For Club</p>
+        <a href="{{url_for('writing', board='Club')}}"><button type="button" name="button">Writing</button></a>
+      </div>
+      <table class="table">
+        <colgroup>
+          <col style="width:60%">
+          <col style="width:13%">
+          <col style="width:13%"
+          <col style="width:13%">
+
+        </colgroup>
+        <tr>
+          <th>TITLE</th>
+          <th>WRITER</th>
+          <th>TIME</th>
+          <th>NUM OF SIGNATURE</th>
+        </tr>
+        <tbody>
+          {% for obj in result%}
+            <tr>
+                <td><a href="{{url_for('detail',board='Club', post_id=obj.id)}}">{{obj.title}}</a></td>
+                <td>{{obj.username}}</td>
+                <td>{{obj.created_at}}</td>
+                <td>{{obj.signature_num}} / {{obj.required_signature_num}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer-center">
+        <div class="developer">
+          <p>DEVELOPER</p>
+        </div>
+        <div class="info">
+          <p>YooJaewon</p>
+          <p>SW 18</p>
+          <p>TEL: 010-9759-0028</p>
+          <p>Email: sssly1133@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

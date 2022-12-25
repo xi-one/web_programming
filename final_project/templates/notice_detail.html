@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% with message = get_flashed_messages() %}
+      {% if message %}
+        <script>
+          alert("{{message[-1]}}")
+        </script>
+      {% endif %}
+    {% endwith %}
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../static/css/detail_style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="Login-bar">
+        <div class="login">
+          {% if session.loginUser %}
+          <p> <a href="/logout">Log out</a> </p>
+          <p> <a href="/mypost">My Page</a> </p>
+          <p> Hi, {{session.loginUser.name}} </p>
+          {% else %}
+          <p><a href="/signup">Register</a></p>
+          <p><a href="/login">Login</a></p>
+
+
+          {% endif %}
+        </div>
+
+      </div>
+
+      <div class="logo">
+        <img src="../static/assets/logo.png" alt="">
+      </div>
+      <nav class="nav">
+          <p><a href="/">Home</a></p>
+          <p><a href="/notice">Notice</a></p>
+          <p><a href="/club">Club</a></p>
+          <p><a href="/suggestion">Suggestion</a></p>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="board-name">
+        <p style="border-bottom: 5px solid rgb(7, 42, 96)">Notice</p>
+      </div>
+
+      <table class="table">
+        {% if post %}
+        <colgroup>
+          <col style="width:50%">
+          <col style="width:50%">
+        </colgroup>
+        <tr>
+          <td colspan="2" id="title">{{post.title}}</td>
+        </tr>
+        <tr id="info" >
+          <td>{{post.username}}</td>
+          <td>{{post.created_at}}</td>
+        </tr>
+        <tr>
+          <td colspan="2" id="content">{{post.content}}</td>
+        </tr>
+        {% endif %}
+      </table>
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer-center">
+        <div class="developer">
+          <p>DEVELOPER</p>
+        </div>
+        <div class="info">
+          <p>YooJaewon</p>
+          <p>SW 18</p>
+          <p>TEL: 010-9759-0028</p>
+          <p>Email: sssly1133@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

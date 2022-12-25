@@ -1,0 +1,135 @@
+body{
+  text-align: center;
+  margin: 0;
+  min-height: 150vh;
+  position: relative;
+}
+
+.header .Login-bar {
+  display: flex;
+  justify-content: flex-end;
+  width: 90vw;
+}
+
+
+.header .Login-bar p {
+  margin-right: 30px;
+  float: right;
+}
+.header .Login-bar p a{
+  text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+  color: black;
+}
+
+.header .logo {
+  width: 70vw;
+  display: inline-block;
+  text-align: left;
+
+}
+
+.header .logo img {
+  height: 80px;
+}
+
+.header .nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(43, 102, 83);
+  margin: 0;
+  padding: 15px 0;
+}
+
+.header .nav p{
+  margin:0 150px;
+}
+.header .nav p a{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+  color: white;
+}
+.main {
+  width: 50vw;
+  display: inline-block;
+  margin-top: 100px;
+}
+
+.main .board-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+}
+
+.main .board-name p {
+  width: max-content;
+  padding-bottom: 10px;
+  border-bottom: 3px solid rgb(43, 102, 83);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.main .table {
+  border-top: 3px solid black;
+  width: 100%;
+  min-height: 50vh;
+}
+
+.main .table tr{
+  border-bottom: 1px solid grey;
+
+}
+
+.main .table #title {
+  background-color: rgb(249, 249, 249);
+  border-bottom: 1px solid grey;
+  text-align: left;
+  padding: 20px 30px;
+  height: 30px;
+  font-size: 25px;
+}
+.main .table #info {
+  border-bottom: 1px solid grey;
+  height: 10px;
+  font-weight: bold;
+}
+
+.main .table #content {
+  vertical-align : top;
+  padding: 20px 30px;
+  border-bottom: 1px solid grey;
+  text-align: left;
+}
+
+.main .form button {
+  background-color: rgb(141, 198, 63);
+  border: white;
+  width: 100px;
+  height: 50px;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 50px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: rgb(48, 48, 48);
+  color: white;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.footer .developer {
+  padding: 0 100px;
+  display: inline-block;
+  border-bottom: 1px solid grey;
+  width: max-content;
+}

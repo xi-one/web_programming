@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../static/css/mypage_style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="Login-bar">
+        <div class="login">
+          {% if session.loginUser %}
+          <p> <a href="/logout">Log out</a> </p>
+          <p> <a href="/mypage">My Page</a> </p>
+          <p> Hi, {{session.loginUser.name}} </p>
+          {% else %}
+          <p><a href="/signup">Register</a></p>
+          <p><a href="/login">Login</a></p>
+
+
+          {% endif %}
+        </div>
+
+      </div>
+
+      <div class="logo">
+        <img src="../static/assets/logo.png" alt="">
+      </div>
+      <nav class="nav">
+          <p><a href="/">Home</a></p>
+          <p><a href="/notice">Notice</a></p>
+          <p><a href="/club">Club</a></p>
+          <p><a href="/suggestion">Suggestion</a></p>
+      </nav>
+    </header>
+    <div class="middle">
+      <section class="sidebar">
+        <div id="text"><p>My Signature</p></div>
+        <a href="/mypost"><div class="post">My Post</div></a>
+        <a href="/mysignature"><div class="post" id="current">My Signature</div></a>
+      </section>
+
+      <section class="main">
+        <div class="board-name">
+          <p>My Signature</p>
+        </div>
+
+        <table class="table">
+          <colgroup>
+            <col style="width:60%">
+            <col style="width:13%">
+            <col style="width:13%"
+            <col style="width:13%">
+
+          </colgroup>
+          <tr>
+            <th>TITLE</th>
+            <th>WRITER</th>
+            <th>TIME</th>
+            <th>NUM OF SIGNATURE</th>
+          </tr>
+          <tbody>
+            {% for obj in result%}
+              <tr>
+                  <td><a href="{{url_for('detail',board=obj.board, post_id=obj.id)}}">{{obj.title}}</a></td>
+                  <td>{{obj.username}}</td>
+                  <td>{{obj.created_at}}</td>
+                  <td>{{obj.signature_num}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+      </section>
+    </div>
+
+  </body>
+</html>

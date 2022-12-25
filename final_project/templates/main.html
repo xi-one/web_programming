@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../static/css/index_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="Login-bar">
+        <div class="login">
+          {% if session.loginUser %}
+          <p> <a href="/logout">Log out</a> </p>
+          <p> <a href="/mypost">My Page</a> </p>
+          <p> Hi, {{session.loginUser.name}} </p>
+          {% else %}
+          <p><a href="/signup">Register</a></p>
+          <p><a href="/login">Login</a></p>
+
+
+          {% endif %}
+        </div>
+      </div>
+      <div class="logo">
+        <img src="../static/assets/logo.png" alt="">
+      </div>
+      <nav class="nav">
+          <p><a href="/">Home</a></p>
+          <p><a href="/notice">Notice</a></p>
+          <p><a href="/club">Club</a></p>
+          <p><a href="/suggestion">Suggestion</a></p>
+      </nav>
+    </header>
+    <section class="container">
+      <div class="main">
+        <div class="main-img">
+          <img width="80%"  src="../static/assets/main.png" alt="">
+        </div>
+        <div class="main-text">
+          <p>Many drops make a shower</p>
+        </div>
+      </div>
+
+      <div class="intro">
+        <img src="../static/assets/signature.jpg" alt="">
+        <div class="intro-text">
+          <p>In this website you can easily find someone to sign for you.</p>
+        </div>
+      </div>
+      <div class="pre-container">
+        <div class="title">
+          <p>We need your help</p>
+        </div>
+
+        <div class="pre">
+          {% for obj in result%}
+          <a href="{{url_for('detail',board=obj.board, post_id=obj.id)}}"><div class="post"><p>{{obj.title}}</p></div></a>
+
+          {% endfor %}
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer-center">
+        <div class="developer">
+          <p>DEVELOPER</p>
+        </div>
+        <div class="info">
+          <p>YooJaewon</p>
+          <p>SW 18</p>
+          <p>TEL: 010-9759-0028</p>
+          <p>Email: sssly1133@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+
+
+
+
+
+</html>

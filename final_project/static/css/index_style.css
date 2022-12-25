@@ -1,0 +1,151 @@
+body{
+  text-align: center;
+  margin: 0;
+  min-height: 150vh;
+  position: relative;
+  padding-bottom: 300px;
+}
+
+.header .Login-bar {
+  display: flex;
+  justify-content: flex-end;
+  width: 90vw;
+}
+
+
+.header .Login-bar p {
+  margin-right: 30px;
+  float: right;
+}
+.header .Login-bar p a{
+  text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+  color: black;
+}
+
+.header .logo {
+  width: 70vw;
+  display: inline-block;
+  text-align: left;
+
+}
+
+.header .logo img {
+  height: 80px;
+}
+
+.header .nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(43, 102, 83);
+  margin: 0;
+  padding: 15px 0;
+}
+
+.header .nav p{
+  margin:0 150px;
+}
+.header .nav p a{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+  color: white;
+}
+
+.container .main {
+  position: relative;
+}
+
+.container .main .main-img img {
+  filter: brightness(50%);
+}
+
+.container .main .main-text{
+  font-family: 'Oleo Script', cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% );
+  color: white;
+  font-size: 50px;
+}
+
+.container .intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: rgb(230, 232, 236);
+
+}
+
+.container .intro img {
+  height: 320px;
+  margin-right: 300px;
+}
+
+.container .intro .intro-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+
+}
+
+.container .pre-container {
+  text-align: center;
+}
+
+.container .pre-container .title p {
+  font-size: 40px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.container .pre {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .pre a{
+  text-decoration: none;
+  color: black;
+}
+.container .pre-container .pre .post {
+
+  margin: 10px 0;
+  padding-left: 10px;
+  border: 3px solid grey;
+  width: 1000px;
+
+  font-size: 25px;
+  border-radius: 10px;
+  text-align: left;
+}
+.container .pre-container .pre .post p {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+}
+
+.footer {
+  margin-top: 50px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: rgb(48, 48, 48);
+  color: white;
+  width: 100%;
+  padding: 30px 0;
+  height: 270px;
+}
+
+.footer .developer {
+  padding: 0 100px;
+  display: inline-block;
+  border-bottom: 1px solid grey;
+  width: max-content;
+}

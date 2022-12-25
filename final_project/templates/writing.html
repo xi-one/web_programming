@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../static/css/writing_style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="Login-bar">
+        <div class="login">
+          {% if session.loginUser %}
+          <p> <a href="/logout">Log out</a> </p>
+          <p> <a href="/mypost">My Page</a> </p>
+          <p> Hi, {{session.loginUser.name}} </p>
+          {% else %}
+          <p><a href="/signup">Register</a></p>
+          <p><a href="/login">Login</a></p>
+
+
+          {% endif %}
+        </div>
+
+      </div>
+
+      <div class="logo">
+        <img src="../static/assets/logo.png" alt="">
+      </div>
+      <nav class="nav">
+          <p><a href="/">Home</a></p>
+          <p><a href="/notice">Notice</a></p>
+          <p><a href="/club">Club</a></p>
+          <p><a href="/suggestion">Suggestion</a></p>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="board-name">
+        <p>Signature For {{request.args.get('board')}}</p>
+      </div>
+
+      <form class="form" action="/writing" method="post">
+        <table class="table">
+          <colgroup>
+            <col style="background-color:rgb(249, 249, 249);border-collapse: collapse;">
+            <col >
+          </colgroup>
+          <tr>
+            <td>Title</td>
+            <td><input style="width: 250px;" type="text" name="title" value=""></td>
+          </tr>
+          <tr>
+            <td>Writer</td>
+            <td><input style="width: 125px;" type="text" name="writer" value="{{session.loginUser.name}}"></td>
+          </tr>
+          <tr>
+            <td>Num of signature</td>
+            <td><input style="width: 70px" type="number" name="num_signature" value=""></td>
+          </tr>
+        </table>
+        <textarea name="content" id="content"></textarea>
+        <div>
+          <button type="submit" name="button">SUBMIT</button>
+        </div>
+
+      </form>
+    </section>
+    <footer class="footer">
+      <div class="footer-center">
+        <div class="developer">
+          <p>DEVELOPER</p>
+        </div>
+        <div class="info">
+          <p>YooJaewon</p>
+          <p>SW 18</p>
+          <p>TEL: 010-9759-0028</p>
+          <p>Email: sssly1133@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+
+    {% with message = get_flashed_messages() %}
+      {% if message %}
+        <script>
+          alert("{{message[-1]}}")
+        </script>
+      {% endif %}
+    {% endwith %}
+
+  </body>
+</html>

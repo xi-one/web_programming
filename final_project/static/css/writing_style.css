@@ -1,0 +1,136 @@
+body{
+  text-align: center;
+  margin: 0;
+  min-height: 200vh;
+  position: relative;
+}
+
+.header .Login-bar {
+  display: flex;
+  justify-content: flex-end;
+  width: 90vw;
+}
+
+
+.header .Login-bar p {
+  margin-right: 30px;
+  float: right;
+}
+.header .Login-bar p a{
+  text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+  color: black;
+}
+
+.header .logo {
+  width: 70vw;
+  display: inline-block;
+  text-align: left;
+
+}
+
+.header .logo img {
+  height: 80px;
+}
+
+.header .nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(43, 102, 83);
+  margin: 0;
+  padding: 15px 0;
+}
+
+.header .nav p{
+  margin:0 150px;
+}
+.header .nav p a{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+  color: white;
+}
+.main {
+  width: 50vw;
+  display: inline-block;
+  margin-top: 100px;
+}
+
+.main .board-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+}
+
+.main .board-name p {
+  width: max-content;
+  padding-bottom: 10px;
+  border-bottom: 3px solid rgb(43, 102, 83);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.main .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main .form .table{
+  width: 700px;
+  border-top: 3px solid black;
+  border-collapse : collapse;
+  margin-bottom: 30px;
+}
+.main .form .table input {
+  height: 30px;
+}
+
+.main .form .table tr {
+  border-bottom: 1px solid grey;
+}
+
+.main .form .table td {
+  text-align: left;
+  padding: 15px;
+}
+
+.main .form #content {
+  height: 500px;
+  width: 600px;
+  margin-bottom: 30px;
+  word-wrap:break-word;
+
+}
+
+.main .form button {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  width: 400px;
+  height: 50px;
+  margin-bottom: 100px;
+  cursor:pointer;
+}
+
+.footer {
+  margin-top: 50px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: rgb(48, 48, 48);
+  color: white;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.footer .developer {
+  padding: 0 100px;
+  display: inline-block;
+  border-bottom: 1px solid grey;
+  width: max-content;
+}
